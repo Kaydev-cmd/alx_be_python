@@ -4,12 +4,12 @@ operation = input("Choose the operation (+, -, *, /): ")
 
 match operation:
   case "+":
-    print(num1 + num2)
+    print(f"The result is {num1 + num2}")
   case "-":
-    print(num1 - num2)
+    print(f"The result is {num1 - num2}")
   case "*":
-    print(num1 * num2)
+    print(f"The result is {num1 * num2}")
   case "/": 
-    print(num1 / num2)
+    print(f"The result is {num1 / num2}")
   case _:
     print("Invalid number")
