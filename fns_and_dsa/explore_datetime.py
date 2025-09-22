@@ -8,8 +8,8 @@ display_current_datetime()
 
 number_of_days = int(input("Enter number of days to add: "))
 
-def calculate_future_days():
+def calculate_future_date():
   future_date = datetime.now() + timedelta(days=number_of_days)
   print(f"Date after {number_of_days} days will be:", future_date)
 
-calculate_future_days()
+calculate_future_date()
