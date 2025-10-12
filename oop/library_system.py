@@ -6,13 +6,15 @@ class Book:
     def get_details(self):
         return f"{self.title} by {self.author}"
 
+
 class EBook(Book):
     def __init__(self, title, author, file_size):
         super().__init__(title, author)
         self.file_size = file_size
 
     def get_details(self):
-        return f"{super().get_details()}, File Size: {self.file_size}KB"
+        return f"EBook: {self.title} by {self.author}, File Size: {self.file_size}KB"
+
 
 class PrintBook(Book):
     def __init__(self, title, author, page_count):
@@ -20,16 +22,17 @@ class PrintBook(Book):
         self.page_count = page_count
 
     def get_details(self):
-        return f"{super().get_details()}, Page Count: {self.page_count}"
-    
+        return f"PrintBook: {self.title} by {self.author}, Page Count: {self.page_count}"
+
+
 class Library:
     def __init__(self):
         self.books = []
-    
+
     def add_book(self, book):
         if isinstance(book, Book):
             self.books.append(book)
-            print(f"Book: {book.title} by {book.title}.")
+            print(f"Book: {book.title} by {book.author} added to the library.")
         else:
             print("Invalid item. Please add a valid book object.")
 
@@ -37,7 +40,7 @@ class Library:
         if not self.books:
             print("The library is currently empty.")
             return
-        
-        print("---Library Books---")
+
+        print("--- Library Books ---")
         for book in self.books:
             print(book.get_details())
